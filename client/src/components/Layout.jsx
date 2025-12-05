@@ -20,6 +20,11 @@ const Layout = () => {
             <Outlet />
           </div>
         </main>
+
+        {/* Footer */}
+        <footer className="bg-gray-900 text-gray-400 py-4 text-center text-sm">
+          Designed & Developed by <span className="text-white font-semibold">Aakash</span> © {new Date().getFullYear()}
+        </footer>
       </div>
     </div>
   );
