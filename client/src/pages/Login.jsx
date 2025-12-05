@@ -334,10 +334,9 @@ const Login = () => {
                 </Link>
               </p>
 
-              {/* Demo Credentials - Only visible in development */}
-              {import.meta.env.DEV && (
-                <div className="mt-8 p-5 bg-white rounded-2xl border border-gray-200 shadow-sm">
-                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Quick Login (Dev Only)</p>
+              {/* Demo Credentials */}
+              <div className="mt-8 p-5 bg-white rounded-2xl border border-gray-200 shadow-sm">
+                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Quick Login</p>
                   <div className="grid grid-cols-2 gap-2">
                     {[
                       { role: 'officer', label: 'Officer', color: 'emerald' },
@@ -357,7 +356,6 @@ const Login = () => {
                     ))}
                   </div>
                 </div>
-              )}
             </>
           ) : (
             /* 2FA OTP Verification */
