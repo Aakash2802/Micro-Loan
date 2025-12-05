@@ -1,0 +1,26 @@
+{
+  "admin": {
+    "email": "admin@loansphere.com",
+    "password": "Admin@123",
+    "name": "System Admin",
+    "role": "admin"
+  },
+  "officer": {
+    "email": "officer@loansphere.com",
+    "password": "Officer@123",
+    "name": "Loan Officer",
+    "role": "officer"
+  },
+  "customer": {
+    "email": "customer@loansphere.com",
+    "password": "Customer@123",
+    "name": "Test Customer",
+    "role": "customer"
+  },
+  "newCustomer": {
+    "name": "New Customer",
+    "email": "newcustomer@test.com",
+    "phone": "9876543999",
+    "password": "NewCustomer@123"
+  }
+}

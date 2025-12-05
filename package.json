@@ -1,0 +1,29 @@
+{
+  "name": "loansphere",
+  "version": "1.0.0",
+  "description": "LoanSphere - Micro Loan Management System",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && npm run dev",
+    "build": "cd client && npm run build",
+    "test": "npm run test:client && npm run test:server",
+    "test:client": "cd client && npm test",
+    "test:server": "cd server && npm test",
+    "test:e2e": "cypress run",
+    "test:e2e:open": "cypress open",
+    "cypress:open": "cypress open"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "cypress": "^15.7.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
