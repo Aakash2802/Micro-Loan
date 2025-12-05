@@ -373,6 +373,45 @@ const seedLoanAccounts = async (customers, products, adminUser) => {
   });
   loanAccounts.push(loan3);
 
+  // Loan 4: Rajesh - Vehicle Loan (Active)
+  const loan4 = await createLoanAccount({
+    customer: customers[1],
+    product: products[4], // Vehicle Loan
+    principal: 150000,
+    tenureMonths: 24,
+    startDate: new Date(Date.now() - 90 * 24 * 60 * 60 * 1000), // 3 months ago
+    adminUser,
+    paidEmis: 3, // 3 EMIs paid
+    hasOverdue: false,
+  });
+  loanAccounts.push(loan4);
+
+  // Loan 5: Rajesh - Home Loan (Active)
+  const loan5 = await createLoanAccount({
+    customer: customers[1],
+    product: products[3], // Home Loan
+    principal: 500000,
+    tenureMonths: 60,
+    startDate: new Date(Date.now() - 60 * 24 * 60 * 60 * 1000), // 2 months ago
+    adminUser,
+    paidEmis: 2, // 2 EMIs paid
+    hasOverdue: false,
+  });
+  loanAccounts.push(loan5);
+
+  // Loan 6: Mohammed - Personal Loan (Closed)
+  const loan6 = await createLoanAccount({
+    customer: customers[3],
+    product: products[0], // Personal Loan
+    principal: 50000,
+    tenureMonths: 6,
+    startDate: new Date(Date.now() - 210 * 24 * 60 * 60 * 1000), // 7 months ago
+    adminUser,
+    paidEmis: 6, // All EMIs paid
+    hasOverdue: false,
+  });
+  loanAccounts.push(loan6);
+
   return loanAccounts;
 };
 
@@ -511,7 +550,7 @@ const seed = async () => {
     console.log(`   • Users: ${users.length}`);
     console.log(`   • Loan Products: ${products.length}`);
     console.log(`   • Customers: ${customers.length}`);
-    console.log(`   • Loan Accounts: 3`);
+    console.log(`   • Loan Accounts: 6`);
     console.log('');
     console.log('🔐 Login credentials:');
     console.log('   Admin:    aakash@gmail.com / Aakash1234');
