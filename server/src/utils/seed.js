@@ -22,9 +22,9 @@ const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/loansphere
 // Sample data
 const usersData = [
   {
-    name: 'Aakash',
-    email: 'aakash@gmail.com',
-    password: 'Aakash1234',
+    name: 'Admin User',
+    email: 'admin@loansphere.com',
+    password: 'Admin@123',
     role: 'admin',
   },
   {
@@ -514,7 +514,7 @@ const seed = async () => {
     console.log(`   • Loan Accounts: 3`);
     console.log('');
     console.log('🔐 Login credentials:');
-    console.log('   Admin:    aakash@gmail.com / Aakash1234');
+    console.log('   Admin:    admin@loansphere.com / Admin@123');
     console.log('   Officer:  officer@loansphere.com / Officer@123');
     console.log('   Customer: customer@loansphere.com / Customer@123');
     console.log('   Customer: rajesh@example.com / Customer@123');

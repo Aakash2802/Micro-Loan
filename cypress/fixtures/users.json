@@ -1,8 +1,8 @@
 {
   "admin": {
-    "email": "aakash@gmail.com",
-    "password": "Aakash1234",
-    "name": "Aakash",
+    "email": "admin@loansphere.com",
+    "password": "Admin@123",
+    "name": "Admin User",
     "role": "admin"
   },
   "officer": {
