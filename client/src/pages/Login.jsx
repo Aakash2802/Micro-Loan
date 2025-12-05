@@ -139,6 +139,14 @@ const Login = () => {
     setError('');
   };
 
+  const fillDemoCredentials = (role) => {
+    const credentials = {
+      officer: { email: 'officer@loansphere.com', password: 'Officer@123' },
+      customer: { email: 'rajesh@example.com', password: 'Customer@123' },
+    };
+    setFormData(credentials[role]);
+  };
+
   return (
     <div className="min-h-screen flex">
       {/* Left Panel - Decorative */}
@@ -325,6 +333,31 @@ const Login = () => {
                   Create account
                 </Link>
               </p>
+
+              {/* Demo Credentials - Only visible in development */}
+              {import.meta.env.DEV && (
+                <div className="mt-8 p-5 bg-white rounded-2xl border border-gray-200 shadow-sm">
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Quick Login (Dev Only)</p>
+                  <div className="grid grid-cols-2 gap-2">
+                    {[
+                      { role: 'officer', label: 'Officer', color: 'emerald' },
+                      { role: 'customer', label: 'Customer', color: 'amber' },
+                    ].map((item) => (
+                      <button
+                        key={item.role}
+                        type="button"
+                        onClick={() => fillDemoCredentials(item.role)}
+                        className={`px-3 py-2.5 text-xs font-semibold rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md
+                          ${item.color === 'emerald' ? 'bg-emerald-100 text-emerald-700 hover:bg-emerald-200' : ''}
+                          ${item.color === 'amber' ? 'bg-amber-100 text-amber-700 hover:bg-amber-200' : ''}
+                        `}
+                      >
+                        {item.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
             </>
           ) : (
             /* 2FA OTP Verification */
